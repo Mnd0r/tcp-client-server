@@ -5,7 +5,7 @@
 
 First we have to build our containers using docker compose
 ```sh
-docker-compose up build
+docker-compose build
 ```
 Then we run our 2 containers
 ```sh
