@@ -1,0 +1,26 @@
+version: "3"
+
+services:
+  server:
+    build: server/
+    ports:
+      - 3001:3001
+
+  #client:
+  #  build: client/
+  #  network_mode: host
+  #  depends_on:
+  #    - server
+  
+  client:
+    build: client/
+    stdin_open: true # to run in interactive mode
+    tty: true
+    
+    # Here we define that the container can access to the 'localhost' of the computer.
+    # network_mode: host tells docker to run the container as if it was running 
+    # on the server itself, so all ports exports by the container will directly be mapped to the server
+    network_mode: host
+    # Here, we want the 'client' service to wait until the 'server' service is ready.
+    depends_on:
+      - server

@@ -1,0 +1,4 @@
+FROM python:latest
+ADD main.py /server/
+WORKDIR /server/
+CMD ["python", "-u", "main.py"]

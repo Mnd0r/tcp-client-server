@@ -1,0 +1,5 @@
+FROM gcc:latest
+COPY main.cpp /usr/src/client/
+WORKDIR /usr/src/client/
+RUN g++ main.cpp -o client
+CMD ["./client"]
